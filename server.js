@@ -2,8 +2,8 @@ const express = require('express');
 const helmet = require('helmet');
 const cors = require('cors');
 
-const postRouter = require('./posts/postRouter');
 const userRouter = require('./users/userRouter');
+const postRouter = require('./posts/postRouter');
 
 const server = express();
 
@@ -23,7 +23,7 @@ function logger(req, res, next) {
   next();
 }
 
-server.use('/api/posts', helmet(), postRouter);
 server.use('/api/users',helmet(), userRouter);
+server.use('/api/posts', helmet(), postRouter);
 
 module.exports = server;

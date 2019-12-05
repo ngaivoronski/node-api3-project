@@ -108,11 +108,11 @@ router.put('/:id', validateUserId, validateUser, (req, res) => {
       if (confirmation > 0) {
         res.status(201).json({ message: "User was successfully updated." });
       } else {
-        res.status(500).json({ error: "There was an error updating deleting the user." });
+        res.status(500).json({ error: "There was an error updating the user." });
       }
     })
     .catch(err => {
-      res.status(500).json({ error: "There was an error updating deleting the user." });
+      res.status(500).json({ error: "There was an error updating the user." });
     });
 });
 
